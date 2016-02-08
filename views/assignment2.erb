@@ -1,0 +1,76 @@
+<h1>P2 - Requirements Analysis</h1>
+
+<h3>Problem</h3>
+<p>
+	Risk legacy is a complex game played over the course of a few months with a group of people. During the game a lot of time is spent tracking and remembering all the information necessary for the game (i.e. who picked which cards, and how many troops each player receives). Even when all of this information can be remembered accurately, the work done to track the information takes away from the game. Our application will allow players of Risk Legacy to track the relevant information of their game while keep their focus on the gameplay
+</p>
+
+
+<h3>Taget Users</h3>
+<p>
+	Our only user class is Risk Legacy players. They are primary stakeholders.
+
+	Persona:  Sam is a third year studying computer science and business. He and his friends have made a group to play Risk Legacy every couple weekends. As much as Sam enjoys hanging out with his friends and playing board games, his busy schedule makes it difficult to find the time. Between coursework and his part time job he has trouble Same is lucky to have a day off and his friends are in similar situations. As a computer science major Sam feels very comfortable learning new apps. He spends hour each day on his computer or phone, doing homework or browsing the web.
+</p>
+
+
+<h3>Tasks</h3>
+
+<ol type="1">
+  <li>Starting turn</li>
+  <ol type="a">
+  	<li>if 4 resource cards -> turn in for red star -> if 4 red stars -> win</li>
+  	<li>certain scar cards are played at beginning of turn</li>
+  </ol>
+  <div>
+  	<img src="/images/start_turn.png" width="30%" height="30%">
+  </div>
+  <li>Recruit troops</li>
+  <ol type="a">
+  	<li>join the war</li>
+  	<li>recruit troops</li>
+  	<ol type="i">
+  		<li>(number of territories + population)/3 round up or down depending on faction bonus + continent bonus + troops gained from turning in cards</li>
+  	</ol>
+  </ol>
+  <div>
+  	<img src="/images/generate_troops.png" width="30%" height="30%">
+  </div>
+  <li>Expand/Attack</li>
+  <li>Maneuver troops</li>
+  <li>End of turn</li>
+  <ol type="a">
+  	<li>some scar cards trigger at end of turn (get list)</li>
+  	<li>if you’ve conquered at least one territory -> draw resource card (check rules addition f)</li>
+  	<li>if coin card deck runs out -> person with most territories gets a red star, if tie no one does</li>
+  </ol>
+  <div>
+  	<img src="/images/end_turn.png" width="30%" height="30%">
+  </div>
+</ol>
+
+<p>Our project is mostly concerned with 1, 2, and 5.</p>
+
+
+<h3>Problem Scenario</h3>
+
+<p>
+	<u>Starting turn</u> - Sam and his friends are about halfway through a game. It’s Sam’s turn again and he begins strategizing where to attack next. He immediately goes to grab troops, completely forgetting he has resource cards to turn in for a red star. By the time he realizes this he’s already placed his troops and begun expanding; it’s too late for him to go back. Frustrated, he hopes that no one else finds a way to win before he’s able to get that red star his next turn. 
+</p>
+<p>
+	<u>Recruit Troops</u> - Sam needs to recruit troops next. He quickly counts up the number of territories he controls, remembers to add in cities, and divides by three to get his troops. He places them in Southeast Asia, ready to attack Australia. Halfway through his turn his friend asks “Wait, did you get your North America continent bonus?” Everyone has to stop as they try to remember. Eventually they try to estimate how many turns have gone by since Sam got North America and keep playing. There’s so many different bonuses and every game someone misses at least one.
+</p>
+<p>
+	<u>Ending turn</u> - It’s finally the end of Sam’s turn. Despite the confusion with his troops he’s managed to conquer Indonesia and Western Australia. He remembers to grab a coin card. He sits back and passes the dice to his friend. Unfortunately Sam has forgotten about the scar card in Iceland which gives him an extra troop at the end of every turn.
+</p>
+
+
+<h3>Usability Requirements</h3>
+
+<p>
+	The first requirement is to store information about the game so that the user does not need to remember it. The information must then be displayed to the user in a way that helps to remind them of certain actions to take.
+</p>
+
+<p>
+	The other requirement for the application is to balance the amount of information stored with staying out of the way of the actual game. The more information stored the more help we can give to user, but in order to get that information the user must stop playing to enter it. Limiting the breaks in play while maximizing help to the player will be very important.
+</p>
