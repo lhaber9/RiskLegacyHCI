@@ -69,3 +69,7 @@ iframe {
         display: none;
      }
 }
+
+.indent {
+  padding-left: 25px;
+}
