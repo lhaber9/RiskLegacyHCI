@@ -1,0 +1,66 @@
+<h1>P4 - Design Sketches</h1>
+
+<h3>Interaction Scenarios</h3>
+<p>
+	<u>Start Turn</u>: Tim ends his turn and the order progresses to Sam. Sam recognizes it is his turn because he is sitting next to Tim, and also because the screen is tinted Blue, his color. At the top of the screen he sees Start Turn, and begins there. Reading left to right he is reminded to check if he has enough resource cards to make a Star card, and to check his Scar cards to see what penalties he has. He does both, and remembers he cannot cross oceans this turn due to a scar card. He keeps this in mind when planning the rest of his turn.
+</p>
+<p>
+	<u>Recruit Troops</u>: After checking his cards, Sam knows the next part of the turn is recruiting new units. He knows the program has calculated how many troops he gets each turn, so he glances at the screen and sees a large 12 in the middle, between the words “recruit“ and “troops”. Sam then places 12 units from his pile around the board.
+</p>
+<p>
+	<u>End Turn</u>: After taking his turn Sam finishes his turn and moves to the end step. Glancing at the bottom of the screen he sees the “Territories Conquered” and remembers he hasn’t recorded his capture of Egypt this turn. He clicks on the box and presses the “E” key, causing a list with “East Africa, Eastern Australia, Eastern United States and Egypt” to appear. He presses the “G” key and the list narrows to just “Egypt”, which he clicks on, and the app shows “Took Egypt from Jamie [X]” below the box to indicate the change. He then reads onward, right of the box, to see a reminder to draw any coin/resource cards he earned. He remembers he earned 1 resource card and draws it. While he does so Tim reminds him to check for any end of turn scar cards. Sam does this, and remembering that this is the last part of his turn and the last thing in our app, presses space to advance the turn. Jamie picks up the dice and begins her turn.
+</p>
+
+
+
+<h3>Preliminary Interface Design Options</h3>
+<h5>Turn Screen Options:</h3>
+
+<h7>1.</h7>
+<img src="/images/assignment4/rows_layout.png" width="30%">
+
+<h7>2.</h7>
+<img src="/images/assignment4/columns_layout.png" width="30%">
+
+<h7>3.</h7>
+<img src="/images/assignment4/click_through_layout.png" width="30%">
+
+
+<p>
+	We decided to go with layout 1. Layout 3 would require the user to click through a page for every step of their turn which would pull them away from the game. The other 2 display all information at once and so the user can just look at it to check for numbers or reminders. The horizontal layout is better, assuming that the user reads left to right, as they aren’t jumping through sections when they scan the screen. It’s also more readable, again assuming English or a similarly written language, as the text in the boxes won’t be compressed into lines of only a few words on a smaller screen.
+</p>
+
+<h3>Overall Design</h3>
+
+<h5>Start Game Screen:</h3>
+<img src="/images/assignment4/start_screen.png" width="60%">
+<p>
+	The users are prompted to enter each player and have them select their factions and starting territory. They will also be given the instructions to navigate the app, hit spacebar to advance pages.
+</p>
+
+<h5>Turn Screen:</h3>
+<img src="/images/assignment4/turn_screen.png" width="60%">
+<p>
+	Each player is given the information needed for their turn. The first section is the start of their turn and will prompt them to check if they have enough resource cards to turn in for a red scar and to check if they have any scar cards that get used at the start of a turn.
+</p>
+
+<h5>End Game Screen:</h3>
+<img src="/images/assignment4/end_screen.png" width="60%">
+<p>
+	This is basically a checklist of end of game tasks.
+</p>
+
+
+<h3>Storyboards</h3>
+<h5>All three of our tasks use the turn screen:</h5>
+<img src="/images/assignment4/rows_layout.png" width="65%">
+
+<p>
+	<u>Start Turn</u>: At the start of the turn the player needs to hit space to bring up their screen. Other than that there is no input, only prompts for the user to follow in the beginning of their turn.
+</p>
+<p>
+	<u>Recruit Troops</u>: There is no input from the user here. Troops are automatically calculated when the screen comes up, the user check needs to look at it to get the number.
+</p>
+<p>
+	<u>End Turn</u>: At the end up the turn the user will type any territories expanded into or conquered. They will be prompted to draw a coin/resource card if they’ve earned one and check any end of turn scar cards.
+</p>
