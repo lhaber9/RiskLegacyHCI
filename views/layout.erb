@@ -8,16 +8,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </head>
   <body>
-   <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><%= @title || SiteConfig.title %></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><%= @title || SiteConfig.title %></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -39,7 +39,11 @@
     </nav>
 
     <div class="container-fluid">
-      <%= yield %>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
