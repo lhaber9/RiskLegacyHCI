@@ -73,3 +73,13 @@ iframe {
 .indent {
   padding-left: 25px;
 }
+
+.center-block {
+   margin-left:auto;
+   margin-right:auto;
+   display:center;
+}
+
+.row-centered {
+    text-align:center;
+}
