@@ -21,7 +21,12 @@ get "/" do
   erb :root
 end
 
-get "/:fileName" do 
-  fileName = params[:fileName].to_s
-  erb fileName.to_sym
+get "/p/:pageName" do 
+	pageName = params[:pageName].to_s
+	erb ("prototype/" + pageName).to_sym, :layout => false
+end
+
+get "/a/:assnName" do 
+  assnName = params[:assnName].to_s
+  erb ("assignments/" + assnName).to_sym
 end
