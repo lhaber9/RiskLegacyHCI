@@ -12,10 +12,15 @@
             <td>{{player.faction}}</td>
             <td>{{player.startingTerritory}}</td>
         </tr>
+        <tr>
+            <td><input ng-model="newForm.name" type="text" name="name" id="name" placeholder="Name"></td>
+            <td><input ng-model="newForm.faction" type="text" name="faction" id="faction" placeholder="Faction"></td>
+            <td><input ng-model="newForm.startingTerritory" type="text" name="territory" id="territory" placeholder="Territory"></td>
+        </tr>
     </tbody>
 </table>
 
-<button>Add Player</button>
+<button ng-click="addPlayer()">Add Player</button>
 
 <div class="col-xs-12" style="height:50px;"></div>
 

@@ -6,7 +6,7 @@
     function Configuration($routeProvider) {
         $routeProvider
             .when("/first", {
-                templateUrl: "firstPage",
+                templateUrl: "../prototype/html/firstPage.html",
                 controller: "FirstPageController"
             })
             .otherwise({
