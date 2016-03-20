@@ -1,13 +1,14 @@
 (function(){
     angular
         .module("RiskLegacyHCI")
-        .controller("Page1Controller", Page1Controller);
+        .controller("SetupController", SetupController);
 
-    function Page1Controller($scope, $rootScope, $location) {
+    function SetupController($scope, $rootScope, $location) {
 
         $scope.addPlayer = addPlayer;
         $scope.clearFormInput = clearFormInput;
         $scope.start = start;
+        $rootScope.gameStarted = false;
 
     	$scope.players = [
     	 	{"name": "Ryan", "faction": "faction1", "startingTerritory": "territory1"},
@@ -36,7 +37,8 @@
         }
 
         function start() {
-            $location.path("2");
+            $rootScope.gameStarted = true;
+            $location.path("quick");
         }
     }
 })();

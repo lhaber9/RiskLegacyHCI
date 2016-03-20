@@ -5,32 +5,32 @@
 
     function Configuration($routeProvider) {
         $routeProvider
-            .when("/1", {
-                templateUrl: "../prototype/html/page1.html",
-                controller: "Page1Controller"
+            .when("/setup", {
+                templateUrl: "../prototype/html/setupView.html",
+                controller: "SetupController"
             })
-            .when("/2", {
-                templateUrl: "../prototype/html/page2.html",
-                controller: "Page2Controller"
+            .when("/quick", {
+                templateUrl: "../prototype/html/quickView.html",
+                controller: "QuickviewController"
             })
             .when("/3", {
                 templateUrl: "../prototype/html/page3.html",
                 controller: "Page3Controller"
             })
-            .when("/4", {
-                templateUrl: "../prototype/html/page4.html",
-                controller: "Page4Controller"
+            .when("/rulebook", {
+                templateUrl: "../prototype/html/rulebookView.html",
+                controller: "RulebookController"
             })
-            .when("/5", {
-                templateUrl: "../prototype/html/page5.html",
-                controller: "Page5Controller"
+            .when("/factions", {
+                templateUrl: "../prototype/html/factionsView.html",
+                controller: "FactionsController"
             })
-            .when("/6", {
-                templateUrl: "../prototype/html/page6.html",
-                controller: "Page6Controller"
+            .when("/envelope", {
+                templateUrl: "../prototype/html/envelopeView.html",
+                controller: "EnvelopeController"
             })
             .otherwise({
-                redirectTo: "/1"
+                redirectTo: "/setup"
             });
     }
 })();

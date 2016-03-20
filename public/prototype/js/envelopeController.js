@@ -1,9 +1,9 @@
 (function(){
     angular
         .module("RiskLegacyHCI")
-        .controller("Page6Controller", Page6Controller);
+        .controller("EnvelopeController", EnvelopeController);
 
-    function Page6Controller($scope) {
+    function EnvelopeController($scope) {
     	$scope.displayPacks = [
     		{"num":1},
     		{"num":2},

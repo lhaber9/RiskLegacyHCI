@@ -1,9 +1,9 @@
 (function(){
     angular
         .module("RiskLegacyHCI")
-        .controller("Page5Controller", Page5Controller);
+        .controller("FactionsController", FactionsController);
 
-    function Page5Controller($scope) {
+    function FactionsController($scope) {
     	$scope.displayElements = [{},{},{},{},{}];
     	console.log($scope.displayElements);
 	}
