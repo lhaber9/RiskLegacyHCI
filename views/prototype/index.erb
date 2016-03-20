@@ -10,9 +10,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="/prototype/css/main.css">
+
     <script src="/prototype/app.js"></script>
     <script src="/prototype/config.js"></script>
-    <script src="/prototype/js/firstPageController.js"></script>
+    <script src="/prototype/js/page1Controller.js"></script>
+    <script src="/prototype/js/page2Controller.js"></script>
+    <script src="/prototype/js/page3Controller.js"></script>
+    <script src="/prototype/js/page4Controller.js"></script>
+    <script src="/prototype/js/page5Controller.js"></script>
+    <script src="/prototype/js/page6Controller.js"></script>
     <script src="/prototype/js/headerController.js"></script>
 
 </head>
@@ -21,7 +28,9 @@
 
   <div ng-include="'/prototype/html/header.html'"></div>
 
-  <div ng-view class="main"></div>
+  <div class="container-fluid">
+    <div ng-view class="main"></div>
+  </div>
 
 </body>
 </html>

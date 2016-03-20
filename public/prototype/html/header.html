@@ -1,12 +1,12 @@
-<nav class="navbar navbar-default" ng-controller="HeaderController">
+<nav class="navbar navbar-default" ng-controller="HeaderController" ng-hide="$location.url() == '/3'">
     <div class="container-fluid">
           <ul class="nav navbar-nav nav-justified">
             <li class="divider-vertical"></li>
-            <li><a href="#" class="col-lg-3" ng-show="$location.url() == '/first'">Setup</a></li>
-            <li><a href="#" class="col-lg-3" ng-show="$location.url() == '/first'">Quickview</a></li>
-            <li><a href="#" class="col-lg-3" ng-show="$location.url() == '/first'">Factions</a></li>
-            <li><a href="#" class="col-lg-3" ng-show="$location.url() == '/first'">Envelope</a></li>
-            <li><a href="#" class="col-lg-3" ng-show="$location.url() == '/first'">Rulebook</a></li>
+            <li><a href="#" class="col-lg-3" ng-hide="$location.url() != '/1'">Setup</a></li>
+            <li><a href="#" class="col-lg-3" ng-hide="$location.url() == '/1' || $location.url() == '/3'">Quickview</a></li>
+            <li><a href="#" class="col-lg-3" ng-hide="$location.url() == '/3'">Factions</a></li>
+            <li><a href="#" class="col-lg-3" ng-hide="$location.url() == '/1' || $location.url() == '/3' || $location.url() == '/5'">Envelope</a></li>
+            <li><a href="#" class="col-lg-3" ng-hide="$location.url() == '/1' || $location.url() == '/3' || $location.url() == '/5'">Rulebook</a></li>
           </ul>
     </div>
 </nav>
