@@ -21,11 +21,5 @@
     		}
     		$scope.factionNames = Object.keys($scope.factions);
     	}
-
-
-
-
-
-    	
 	}
 })();
