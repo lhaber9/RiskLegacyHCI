@@ -31,12 +31,12 @@
             if ($scope.newForm.name == "" || $scope.newForm.faction == "" || $scope.newForm.startingTerritory == "") {
                 return;
             }
-
             $scope.players.push($scope.newForm);
             $scope.clearFormInput();
         }
 
         function start() {
+            $rootScope.players = $scope.players;
             $rootScope.gameStarted = true;
             $location.path("quick");
         }
