@@ -10,8 +10,6 @@
     	$scope.update = update;
     	$scope.update();
 
-    	console.log("here");
-
     	function update() {
     		var players = $rootScope.players;
     		for (playerIdx in players) {

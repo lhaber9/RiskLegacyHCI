@@ -6,11 +6,13 @@
     function SetupController($scope, $rootScope, $location) {
 
         $scope.addPlayer = addPlayer;
+        $scope.removePlayer = removePlayer;
         $scope.clearFormInput = clearFormInput;
         $scope.start = start;
-        $rootScope.gameStarted = false;
+        
 
-    	$scope.players = [
+        $rootScope.gameStarted = false;
+    	$rootScope.players = [
     	 	{"name": "Ryan", "faction": "faction1", "startingTerritory": "territory1"},
     	 	{"name": "Luke", "faction": "faction2", "startingTerritory": "territory2"},
     	 	{"name": "Matt", "faction": "faction3", "startingTerritory": "territory3"},
@@ -31,12 +33,15 @@
             if ($scope.newForm.name == "" || $scope.newForm.faction == "" || $scope.newForm.startingTerritory == "") {
                 return;
             }
-            $scope.players.push($scope.newForm);
+            $rootScope.players.push($scope.newForm);
             $scope.clearFormInput();
         }
 
+        function removePlayer(player) {
+
+        }
+
         function start() {
-            $rootScope.players = $scope.players;
             $rootScope.gameStarted = true;
             $location.path("quick");
         }
