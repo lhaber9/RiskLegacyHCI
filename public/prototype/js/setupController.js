@@ -3,26 +3,26 @@
         .module("RiskLegacyHCI")
         .controller("SetupController", SetupController);
 
-    function SetupController($scope, $rootScope, $location) {
+    function SetupController($scope, $rootScope, $location, uuid2) {
 
         $scope.addPlayer = addPlayer;
         $scope.removePlayer = removePlayer;
         $scope.clearFormInput = clearFormInput;
         $scope.start = start;
+        $scope.$rootScope = $rootScope;
         
 
         $rootScope.gameStarted = false;
-    	$rootScope.players = [
-    	 	{"name": "Ryan", "faction": "faction1", "startingTerritory": "territory1"},
-    	 	{"name": "Luke", "faction": "faction2", "startingTerritory": "territory2"},
-    	 	{"name": "Matt", "faction": "faction3", "startingTerritory": "territory3"},
-    	 	{"name": "Spencer", "faction": "faction4", "startingTerritory": "territory4"}
-    	];
 
+        if (!$rootScope.players) {
+            $rootScope.players = [];
+        }
+    	
         $scope.clearFormInput();
 
         function clearFormInput() {
             $scope.newForm = {
+                "id": uuid2.newguid(),
                 "name": "", 
                 "faction": "", 
                 "startingTerritory": ""
@@ -38,7 +38,11 @@
         }
 
         function removePlayer(player) {
-
+            for (playerIdx in $rootScope.players) {
+                if ($rootScope.players[playerIdx].id == player.id) {
+                    $rootScope.players.splice(playerIdx, 1);
+                }
+            }
         }
 
         function start() {

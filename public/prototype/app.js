@@ -1,4 +1,4 @@
 (function(){
     angular
-        .module("RiskLegacyHCI", ["ngRoute"]);
+        .module("RiskLegacyHCI", ["ngRoute", "angularUUID2"]);
 })();
