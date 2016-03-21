@@ -4,6 +4,11 @@
         .controller("QuickviewController", QuickviewController);
 
     function QuickviewController($scope) {
-		$scope.rando = Math.floor(Math.random() * 67 + 3);
+		$scope.randomize = randomize;
+		randomize();
+
+		function randomize() {
+			$scope.rando = Math.floor(Math.random() * 67 + 3);
+		}
 	}
 })();
