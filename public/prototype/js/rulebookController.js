@@ -5,5 +5,13 @@
 
     function RulebookController($scope) {
     	
+    	$scope.didChange = didChange;
+
+		$scope.text = ""
+		$scope.results = [];
+
+		function didChange() {
+			//searching
+		}
 	}
 })();
