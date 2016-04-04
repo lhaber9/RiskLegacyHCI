@@ -8,7 +8,8 @@
         $scope.addPlayer = addPlayer;
         $scope.removePlayer = removePlayer;
         $scope.clearFormInput = clearFormInput;
-        $scope.start = start;
+        $scope.tryStart = tryStart;
+        $scope.doStart = doStart;
         $scope.$rootScope = $rootScope;
         
 
@@ -20,6 +21,20 @@
     	
         $scope.clearFormInput();
 
+        function newPlayerIsEmpty() {
+            if ($scope.newForm.name == "" && $scope.newForm.faction == "" && $scope.newForm.startingTerritory == "") {
+                return true;
+            }
+            return false;
+        }
+
+        function newPlayerFull() {
+            if ($scope.newForm.name == "" || $scope.newForm.faction == "" || $scope.newForm.startingTerritory == "") {
+                return false;
+            }
+            return true;
+        }
+
         function clearFormInput() {
             $scope.newForm = {
                 "id": uuid2.newguid(),
@@ -30,7 +45,7 @@
         }
 
         function addPlayer() {
-            if ($scope.newForm.name == "" || $scope.newForm.faction == "" || $scope.newForm.startingTerritory == "") {
+            if (!newPlayerFull()) {
                 return;
             }
             $rootScope.players.push($scope.newForm);
@@ -45,8 +60,21 @@
             }
         }
 
-        function start() {
+        function tryStart() {
+            if ( $rootScope.players.length == 0 ) {
+                $("#confirmEmptyModalButton").click();
+                return;
+            }
+            if ( !newPlayerIsEmpty() ) {
+                $("#confirmUnsaveModalButton").click();
+                return;
+            }
+            doStart();
+        }
+
+        function doStart() {
             $rootScope.gameStarted = true;
+            $rootScope.playerUpIndex = 0;
             $location.path("quick");
         }
     }
