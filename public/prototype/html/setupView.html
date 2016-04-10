@@ -17,7 +17,17 @@
             </tr>
             <tr ng-show="$rootScope.players.length < 5">
                 <td><input ng-model="newForm.name" type="text" name="name" id="name" placeholder="Name"></td>
-                <td><input ng-model="newForm.faction" type="text" name="faction" id="faction" placeholder="Faction"></td>
+                <td>
+                    <div class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {{newForm.faction == "" ? "faction" : newForm.faction}}
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li ng-repeat="faction in availableFactions" ng-click="chooseFaction(faction)"><a href="">{{faction}}</a></li>
+                        </ul>
+                    </div>
+                </td>
                 <td><input ng-model="newForm.startingTerritory" type="text" name="territory" id="territory" placeholder="Territory"></td>
                 <td></td>
             </tr>
