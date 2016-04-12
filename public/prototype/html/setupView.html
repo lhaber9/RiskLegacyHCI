@@ -11,7 +11,7 @@
         <tbody>
             <tr ng-repeat="player in $rootScope.players">
                 <td>{{player.name}}</td>
-                <td>{{player.faction}}</td>
+                <td>{{player.faction.name}}</td>
                 <td>{{player.startingTerritory}}</td>
                 <td><span ng-click="removePlayer(player)" class="glyphicon glyphicon-remove fa-2x"></span></td>
             </tr>
@@ -20,11 +20,11 @@
                 <td>
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        {{newForm.faction == "" ? "faction" : newForm.faction}}
+                        {{newForm.faction.name == "" ? "faction" : newForm.faction.name}}
                         <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                          <li ng-repeat="faction in availableFactions" ng-click="chooseFaction(faction)"><a href="">{{faction}}</a></li>
+                          <li ng-repeat="faction in availableFactions" ng-click="chooseFaction(faction)"><a href="">{{faction.name}}</a></li>
                         </ul>
                     </div>
                 </td>

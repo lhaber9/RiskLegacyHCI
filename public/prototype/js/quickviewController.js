@@ -3,11 +3,32 @@
         .module("RiskLegacyHCI")
         .controller("QuickviewController", QuickviewController);
 
-    function QuickviewController($scope, $rootScope) {
+    function QuickviewController($scope, $rootScope, ListsFactory) {
     	$scope.$rootScope = $rootScope;
 		$scope.randomize = randomize;
+		$scope.addTerritory = addTerritory;
 		$scope.next = next;
 		randomize();
+
+		$scope.territory = "";
+		$scope.territories = [];
+		$scope.availableTerritories = ListsFactory.availableTerritories().slice();
+		$scope.removedTerritories = [];
+
+		function autoComplete() {
+			$( ".territoryInput" ).autocomplete({
+	          source: $scope.availableTerritories,
+	          messages: {
+	                noResults: '',
+	                results: function() {}
+	            },
+	            select: function (event, ui) {
+	                 $scope.territory = ui.item.value;                       
+	             }  
+	        });
+		}
+
+		autoComplete()
 
 		function randomize() {
 			$scope.rando = Math.floor(Math.random() * 67 + 3);
@@ -20,6 +41,26 @@
 				nextPlayerIndex = 0;
 			}
 			$rootScope.playerUpIndex = nextPlayerIndex;
+			$scope.territory = ""
+			$scope.territories = [];
+			$scope.availableTerritories = $scope.availableTerritories.concat($scope.removedTerritories);
+			$scope.removedTerritories = [];
+			autoComplete();
+		}
+
+		function addTerritory() {
+			for (territoryIdx in $scope.availableTerritories) {
+                var territory = $scope.availableTerritories[territoryIdx];
+                if (territory == $scope.territory) {
+                	$scope.removedTerritories.push(territory);
+                    $scope.availableTerritories.splice(territoryIdx, 1);
+                    break;
+                }
+            }
+
+			$scope.territories.push($scope.territory);
+			$scope.territory = "";
+			$( ".territoryInput" ).val("");
 		}
 	}
 })();

@@ -3,7 +3,7 @@
         .module("RiskLegacyHCI")
         .controller("SetupController", SetupController);
 
-    function SetupController($scope, $rootScope, $location, uuid2) {
+    function SetupController($scope, $rootScope, $location, uuid2, ListsFactory) {
 
         $scope.addPlayer = addPlayer;
         $scope.removePlayer = removePlayer;
@@ -14,55 +14,10 @@
 
         $scope.$rootScope = $rootScope;
 
-        $scope.availableFactions = ["Die Mechaniker", 
-                                    "Enclave of the Bear", 
-                                    "Imperial Balkania", 
-                                    "Khan Industries", 
-                                    "The Saharan Republic"];
+        $scope.availableFactions = ListsFactory.availableFactions().slice();
+        $scope.availableTerritories = ListsFactory.availableTerritories().slice();
 
-        $scope.availableTerritories = [ "Afghanistan",
-                                        "Alaska", 
-                                        "Alberta ",
-                                        "Argentina",
-                                        "Brazil",
-                                        "Central Africa",
-                                        "Central America",
-                                        "China",
-                                        "East Africa",
-                                        "Eastern Australia",
-                                        "Eastern United States",
-                                        "Egypt",
-                                        "Great Britain",
-                                        "Greenland",
-                                        "Iceland",
-                                        "India",
-                                        "Indonesia",
-                                        "Irkutsk",
-                                        "Japan",
-                                        "Kamchatka",
-                                        "Madagascar",
-                                        "Middle East",
-                                        "Mongolia",
-                                        "New Guinea",
-                                        "North Africa",
-                                        "Northern Europe",
-                                        "Northwest Territory",
-                                        "Ontario",
-                                        "Peru",
-                                        "Quebec",
-                                        "Scandinavia",
-                                        "Siam",
-                                        "Siberia",
-                                        "South Africa",
-                                        "Southern Europe",
-                                        "Ukraine",
-                                        "Ural",
-                                        "Venezuela",
-                                        "Western Australia",
-                                        "Western Europe",
-                                        "Western United States",
-                                        "Yakutsk" ];
-
+        console.log($scope.availableFactions);
 
         function setupAutocomplete() {
             $( ".territoryInput" ).autocomplete({
@@ -91,14 +46,14 @@
         }
 
         function newPlayerIsEmpty() {
-            if ($scope.newForm.name == "" && $scope.newForm.faction == "" && $scope.newForm.startingTerritory == "") {
+            if ($scope.newForm.name == "" && $scope.newForm.faction.name == "" && $scope.newForm.startingTerritory == "") {
                 return true;
             }
             return false;
         }
 
         function newPlayerFull() {
-            if ($scope.newForm.name == "" || $scope.newForm.faction == "" || $scope.newForm.startingTerritory == "") {
+            if ($scope.newForm.name == "" || $scope.newForm.faction.name == "" || $scope.newForm.startingTerritory == "") {
                 return false;
             }
             return true;
@@ -108,7 +63,7 @@
             $scope.newForm = {
                 "id": uuid2.newguid(),
                 "name": "", 
-                "faction": "", 
+                "faction": {"name":"", "color":""}, 
                 "startingTerritory": ""
             }
 
@@ -131,7 +86,7 @@
 
             for (factionIdx in $scope.availableFactions) {
                 var aFaction = $scope.availableFactions[factionIdx];
-                if (aFaction == $scope.newForm.faction) {
+                if (aFaction.name == $scope.newForm.faction.name) {
                     $scope.availableFactions.splice(factionIdx, 1);
                     break;
                 }
