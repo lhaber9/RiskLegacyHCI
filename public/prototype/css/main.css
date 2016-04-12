@@ -21,3 +21,7 @@
 #troopCount {
 	font-size: 55pt;
 }
+
+.ui-helper-hidden-accessible { display:none; }
+
+.ui-helper-hidden-accessible { position: absolute; left:-999em; }
