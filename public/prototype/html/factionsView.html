@@ -1,8 +1,8 @@
 <div class="row">
 
-	<div class="col-xs-4" ng-repeat="factionName in factionNames">
-		<div class="padded bordered">
-			<h4>{{factionName}}</h4>
+	<div class="col-xs-4" ng-repeat="faction in factions">
+		<div class="padded bordered" style="background-color:{{faction.color}};">
+			<h4>{{faction.name}}</h4>
 			<p ng-repeat="player in factions[factionName]">[{{player.name}}]</p>
 		</div>
 	</div>

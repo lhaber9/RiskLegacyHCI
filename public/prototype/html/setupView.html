@@ -4,6 +4,7 @@
             <tr>
                 <th>Name</th>
                 <th>Faction</th>
+                <th>Color</th>
                 <th>Starting Territory</th>
                 <th></th>
             </tr>
@@ -12,6 +13,7 @@
             <tr ng-repeat="player in $rootScope.players">
                 <td>{{player.name}}</td>
                 <td>{{player.faction.name}}</td>
+                <td style="background-color:{{player.faction.color}};"></td>
                 <td>{{player.startingTerritory}}</td>
                 <td><span ng-click="removePlayer(player)" class="glyphicon glyphicon-remove fa-2x"></span></td>
             </tr>
@@ -28,6 +30,7 @@
                         </ul>
                     </div>
                 </td>
+                <td style="background-color:{{newForm.faction.color}};"></td>
                 <td><input class="territoryInput" ng-model="newForm.startingTerritory" type="text" name="territory" id="territory" placeholder="Territory"></td>
                 <td></td>
             </tr>

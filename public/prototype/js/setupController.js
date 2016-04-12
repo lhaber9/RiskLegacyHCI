@@ -14,14 +14,16 @@
 
         $scope.$rootScope = $rootScope;
 
-        $scope.availableFactions = ListsFactory.availableFactions().slice();
-        $scope.availableTerritories = ListsFactory.availableTerritories().slice();
-
-        console.log($scope.availableFactions);
+        if ($rootScope.availableFactions == null) {
+            $rootScope.availableFactions = ListsFactory.availableFactions().slice();
+        }
+        if ($rootScope.availableTerritories == null) {
+            $rootScope.availableTerritories = ListsFactory.availableTerritories().slice();
+        }
 
         function setupAutocomplete() {
             $( ".territoryInput" ).autocomplete({
-              source: $scope.availableTerritories,
+              source: $rootScope.availableTerritories,
               messages: {
                     noResults: '',
                     results: function() {}
@@ -76,18 +78,20 @@
             }
             $rootScope.players.push($scope.newForm);
             
-            for (territoryIdx in $scope.availableTerritories) {
-                var territory = $scope.availableTerritories[territoryIdx];
+            for (territoryIdx in $rootScope.availableTerritories) {
+                var territory = $rootScope.availableTerritories[territoryIdx];
                 if (territory == $scope.newForm.startingTerritory) {
-                    $scope.availableTerritories.splice(territoryIdx, 1);
+                    $rootScope.availableTerritories.splice(territoryIdx, 1);
                     break;
                 }
             }
 
-            for (factionIdx in $scope.availableFactions) {
-                var aFaction = $scope.availableFactions[factionIdx];
+            for (factionIdx in $rootScope.availableFactions) {
+                var aFaction = $rootScope.availableFactions[factionIdx];
+                console.log(aFaction);
+                console.log($scope.newForm.faction);
                 if (aFaction.name == $scope.newForm.faction.name) {
-                    $scope.availableFactions.splice(factionIdx, 1);
+                    $rootScope.availableFactions.splice(factionIdx, 1);
                     break;
                 }
             }
@@ -97,8 +101,8 @@
         }
 
         function removePlayer(player) {
-            $scope.availableFactions.push(player.faction);
-            $scope.availableTerritories.push(player.startingTerritory);
+            $rootScope.availableFactions.push(player.faction);
+            $rootScope.availableTerritories.push(player.startingTerritory);
 
             for (playerIdx in $rootScope.players) {
                 if ($rootScope.players[playerIdx].id == player.id) {

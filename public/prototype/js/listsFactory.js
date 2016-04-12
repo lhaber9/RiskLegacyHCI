@@ -56,11 +56,11 @@
         return {
 
             availableFactions: function() {
-                return availableFactions.slice();
+                return availableFactions;
             },
 
             availableTerritories: function() {
-                return availableTerritories.slice();
+                return availableTerritories;
             }
 
         }
