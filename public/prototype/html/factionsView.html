@@ -3,7 +3,7 @@
 	<div class="col-xs-4" ng-repeat="faction in factions">
 		<div class="padded bordered" style="background-color:{{faction.color}};">
 			<h4>{{faction.name}}</h4>
-			<p ng-repeat="player in factions[factionName]">[{{player.name}}]</p>
+			<p ng-repeat="player in factionInfo[faction.name]">[{{player.name}}]</p>
 		</div>
 	</div>
 

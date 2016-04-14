@@ -1,9 +1,9 @@
 (function(){
     angular
         .module("RiskLegacyHCI")
-        .controller("Page3Controller", Page3Controller);
+        .controller("GameOverController", GameOverController);
 
-    function Page3Controller($scope) {
+    function GameOverController($scope) {
     	$scope.players = [
     		{"num":1, "status": "Won!", "statusText":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
     		{"num":2, "status": "Eliminated!", "statusText":""},

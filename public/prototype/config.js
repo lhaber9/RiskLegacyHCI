@@ -13,9 +13,9 @@
                 templateUrl: "../prototype/html/quickView.html",
                 controller: "QuickviewController"
             })
-            .when("/3", {
-                templateUrl: "../prototype/html/page3.html",
-                controller: "Page3Controller"
+            .when("/gameOver", {
+                templateUrl: "../prototype/html/gameOverView.html",
+                controller: "GameOverController"
             })
             .when("/rulebook", {
                 templateUrl: "../prototype/html/rulebookView.html",

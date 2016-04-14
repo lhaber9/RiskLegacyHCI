@@ -3,10 +3,11 @@
         .module("RiskLegacyHCI")
         .controller("QuickviewController", QuickviewController);
 
-    function QuickviewController($scope, $rootScope, ListsFactory) {
+    function QuickviewController($scope, $rootScope, $location, ListsFactory) {
     	$scope.$rootScope = $rootScope;
 		$scope.randomize = randomize;
 		$scope.addTerritory = addTerritory;
+		$scope.endGame = endGame;
 		$scope.next = next;
 		randomize();
 
@@ -61,6 +62,10 @@
 			$scope.territories.push($scope.territory);
 			$scope.territory = "";
 			$( ".territoryInput" ).val("");
+		}
+
+		function endGame() {
+			$location.path("gameOver");
 		}
 	}
 })();
