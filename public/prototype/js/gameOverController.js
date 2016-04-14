@@ -3,13 +3,24 @@
         .module("RiskLegacyHCI")
         .controller("GameOverController", GameOverController);
 
-    function GameOverController($scope) {
+    function GameOverController($scope, $rootScope) {
+        $scope.$rootScope = $rootScope;
     	$scope.players = [
-    		{"num":1, "status": "Won!", "statusText":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    		{"num":2, "status": "Eliminated!", "statusText":""},
-    		{"num":3, "status": "Held On!", "statusText":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-    		{"num":4, "status": "Eliminated!", "statusText":""},
-    		{"num":5, "status": "Held On!", "statusText":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+    		{"num":0, "status": "Won!", "options":["Choose One:",
+                                                   "-Name a continent",
+                                                   "-Name and found a major city",
+                                                   "-Cancel a Scar Card",
+                                                   "-Change a continent bonus",
+                                                   "-Fortify a city",
+                                                   "-Destroy a territory card"]},
+    		{"num":1, "status": "Eliminated!"},
+    		{"num":2, "status": "Held On!", "options":[ "Choose One:",
+                                                        "-Name and found a Minor City",
+                                                        "-Upgrade a resource card" ]},
+            {"num":3, "status": "Eliminated!"},
+    		{"num":4, "status": "Held On!", "options":[ "Choose One:",
+                                                        "-Name and found a Minor City",
+                                                        "-Upgrade a resource card" ]}
     	];
 	}
 })();

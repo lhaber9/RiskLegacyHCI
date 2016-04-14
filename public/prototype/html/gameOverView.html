@@ -8,11 +8,11 @@
 		<h6>Players:</h6>
 	</div>
 	<div class="col-xs-2 text-center" ng-repeat="player in players">
-		<h6>{{player.num}}</h6>
+		<h6>{{$rootScope.players[player.num].name ? $rootScope.players[player.num].name : player.num}}</h6>
 		<h6>{{player.status}}</h6>
 		<div class="bordered">
-			<p>
-				{{player.statusText}}
+			<p ng-repeat="option in player.options">
+				{{option}}
 			</p>
 		</div>
 	</div>
