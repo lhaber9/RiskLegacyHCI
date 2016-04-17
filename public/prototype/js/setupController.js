@@ -74,6 +74,7 @@
 
         function addPlayer() {
             if (!newPlayerFull()) {
+                $( ".territoryInput" ).val("");
                 return;
             }
             $rootScope.players.push($scope.newForm);

@@ -53,6 +53,7 @@
 
 		function addTerritory() {
 			if ($scope.territory == "") {
+				$( ".territoryInput" ).val("");
 				return;
 			}
 
