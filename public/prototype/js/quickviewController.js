@@ -10,6 +10,7 @@
 		$scope.endGame = endGame;
 		$scope.showEndConfirm = showEndConfirm;
 		$scope.removeTerritory = removeTerritory;
+		$scope.goBack = goBack;
 		$scope.next = next;
 		randomize();
 
@@ -17,6 +18,14 @@
 		$scope.territories = [];
 		$scope.availableTerritories = ListsFactory.availableTerritories().slice();
 		$scope.removedTerritories = [];
+
+		$scope.$on('goBack', function(event, args) {
+			$scope.goBack();
+		});
+
+		$scope.$on('endGame', function(event, args) {
+			$scope.showEndConfirm();
+		});
 
 		function autoComplete() {
 			$( ".territoryInput" ).autocomplete({
@@ -39,13 +48,39 @@
 
 		function next() {
 			randomize();
+			$rootScope.players[$rootScope.playerUpIndex].turns[$rootScope.players[$rootScope.playerUpIndex].completedTurns] = $scope.territories;
+			$rootScope.players[$rootScope.playerUpIndex].completedTurns += 1;
+
 			var nextPlayerIndex = $rootScope.playerUpIndex + 1;
 			if (nextPlayerIndex >= $rootScope.players.length) {
 				nextPlayerIndex = 0;
 			}
+
 			$rootScope.playerUpIndex = nextPlayerIndex;
 			$scope.territory = ""
-			$scope.territories = [];
+			$scope.territories = $rootScope.players[$rootScope.playerUpIndex].turns[$rootScope.players[$rootScope.playerUpIndex].completedTurns];
+
+			if (!$scope.territories) {
+				$scope.territories = [];
+			}
+
+			$scope.availableTerritories = $scope.availableTerritories.concat($scope.removedTerritories);
+			$scope.removedTerritories = [];
+			autoComplete();
+		}
+
+		function goBack() {
+			randomize();
+			
+			var lastPlayerIndex = $rootScope.playerUpIndex - 1;
+			if (lastPlayerIndex < 0) {
+				lastPlayerIndex = $rootScope.players.length - 1;
+			}
+			$rootScope.playerUpIndex = lastPlayerIndex;
+
+			$rootScope.players[$rootScope.playerUpIndex].completedTurns -= 1;
+			$scope.territory = ""
+			$scope.territories = $rootScope.players[$rootScope.playerUpIndex].turns[$rootScope.players[$rootScope.playerUpIndex].completedTurns];
 			$scope.availableTerritories = $scope.availableTerritories.concat($scope.removedTerritories);
 			$scope.removedTerritories = [];
 			autoComplete();

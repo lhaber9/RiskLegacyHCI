@@ -66,7 +66,9 @@
                 "id": uuid2.newguid(),
                 "name": "", 
                 "faction": {"name":"", "color":""}, 
-                "startingTerritory": ""
+                "startingTerritory": "",
+                "turns" : [],
+                "completedTurns": 0
             }
 
             $( ".territoryInput" ).val("");

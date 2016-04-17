@@ -41,6 +41,7 @@
                                         "Ontario",
                                         "Peru",
                                         "Quebec",
+                                        "Russia",
                                         "Scandinavia",
                                         "Siam",
                                         "Siberia",
