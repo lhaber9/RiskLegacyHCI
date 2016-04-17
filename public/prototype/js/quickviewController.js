@@ -9,6 +9,7 @@
 		$scope.addTerritory = addTerritory;
 		$scope.endGame = endGame;
 		$scope.showEndConfirm = showEndConfirm;
+		$scope.removeTerritory = removeTerritory;
 		$scope.next = next;
 		randomize();
 
@@ -63,6 +64,18 @@
 			$scope.territories.push($scope.territory);
 			$scope.territory = "";
 			$( ".territoryInput" ).val("");
+		}
+
+		function removeTerritory(territory) {
+			for (territoryIdx in $scope.territories) {
+                var theTerritory = $scope.territories[territoryIdx];
+                if (territory == theTerritory) {
+                    $scope.territories.splice(territoryIdx, 1);
+                    break;
+                }
+            }
+
+			$scope.availableTerritories.push(territory);
 		}
 
 		function endGame() {
