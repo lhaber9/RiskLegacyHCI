@@ -52,6 +52,10 @@
 		}
 
 		function addTerritory() {
+			if ($scope.territory == "") {
+				return;
+			}
+
 			for (territoryIdx in $scope.availableTerritories) {
                 var territory = $scope.availableTerritories[territoryIdx];
                 if (territory == $scope.territory) {
