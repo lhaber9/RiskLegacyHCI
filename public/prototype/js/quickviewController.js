@@ -8,6 +8,7 @@
 		$scope.randomize = randomize;
 		$scope.addTerritory = addTerritory;
 		$scope.endGame = endGame;
+		$scope.showEndConfirm = showEndConfirm;
 		$scope.next = next;
 		randomize();
 
@@ -67,5 +68,9 @@
 		function endGame() {
 			$location.path("gameOver");
 		}
+
+		function showEndConfirm() {
+            $("#confirmEndModalButton").click();   
+        }
 	}
 })();
