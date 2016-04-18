@@ -1,0 +1,280 @@
+<h1>P8 - User Evaluation & Prototype Revision #2</h1>
+
+<h2>Introduction</h2>
+	<p>
+		The system serves as a companion to the game Risk Legacy. It simplifies the lengthy rulebook it simple reminders for each player's turn. It also tracks player bonuses and territories so that it can calculate a display a count of how many troops each player gets on their turn.
+	</p>
+	<p>
+		The team conducted basic usability tests by setting up a Risk Legacy board as if it were the beginning of a turn and put the system on one team member’s laptop. Participants were directed through three tasks using the system while the team observed and took notes on any errors. Participants were also interviewed about their opinions on the system. The tests recorded user errors made as well as general user opinion about the system.
+	</p>
+
+<h2>Executive Summary</h2>
+	<p>
+		The project team conducted a usability study for the Risk Legacy project on April 17th, 2016 in Northeastern University's West Village H Lab. The study aimed to identify remaining problems in the system’s prototype.
+	</p>
+	<p>
+		Five participants with varying familiarity of the game Risk Legacy were brought it to participate in 20 minute sessions. They were asked to complete tasks and asked formal interview questions afterwards.
+	</p>
+	<p>
+		These sessions identified several major problems in:
+		<ul>
+			<li>Adding territories to the system</li>
+			<li>Adding players to a game</li>
+			<li>The system information being incorrect</li>
+		</ul>
+	</p>
+	<p>
+		These sessions identified several major problems in:
+		<ul>
+			<li>The drop down menus being hard to read</li>
+			<li>Poor grouping of some of the elements in the quick view screen</li>
+		</ul>
+	</p>
+	<p>
+		This document contains a description of the participants and the session, task results, interview results, and recommendations to improve the system.
+	</p>
+
+
+
+<h2>Methodology</h2>
+	<h3>Sessions</h3>
+		<p>
+			Participants were friends of the team. The were brought to the West Village H lab where they spent 10-20 minutes completing assigned tasks and answering questions. Prior to testing they were each asked if they had played Risk Legacy before and if not if they were familiar with any Risk game.
+		</p>
+		<p>
+			After completing the tasks they were asked the following questions:
+			<ul>
+				<li>Did you find this system useful?</li>
+				<li>What was your least favorite part of the system?</li>
+				<li>If you could change one thing about this system what would you change to make it more useful or easier to use.</li>
+			</ul>
+		</p>
+	<h3>Participants</h3>
+		<p>
+			Participants were Northeastern University students. Five participants were gathered to run tests on April 17th. All had at least some familiarity with the game Risk but only two had played Risk Legacy before. No other demographic information was collected.
+		</p>
+	<h3>Evaluation Tasks/Scenarios</h3>
+		<p>
+			Participants were asked to complete the following tasks:
+			<ul>
+				<li>Start a game with 5 players.</li>
+				<li>Enter conquered territories and end their turn.</li>
+				<li>Find what player was in the faction Enclave of the Bear.</li>
+			</ul>
+		</p>
+
+<h2>Results</h2>
+	<h3>Data</h3>
+		<h4>Participant Errors per Task</h4>
+			<ul>
+				<li>Task 1: Start a game with 5 players.</li>
+				<li>Task 2: Enter conquered territories and end their turn.</li>
+				<li>Task 3: Find what player was in the faction Enclave of the Bear.</li>
+			</ul>
+			<p>
+				An error was counted every time a participant made a click that did nothing or didn’t directly step towards completing their task.
+			</p>
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<td></td>
+						<td>Task 1</td>
+						<td>Task 2</td>
+						<td>Task 3</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Participant 1</td>
+						<td>2</td>
+						<td>1</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Participant 2</td>
+						<td>3</td>
+						<td>0</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Participant 3</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Participant 4</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Average Errors</td>
+						<td>1.75</td>
+						<td>0.25</td>
+						<td>0.25</td>
+					</tr>
+				</tbody>
+			</table>
+
+		<h4>Participant Error Descriptions</h4>
+			<h5>Participant 1</h5>
+				<ul>
+					<li>Task 1:</li>
+						<ol>
+							<li>Didn’t understand Risk Legacy rules and entered a city instead of a territory name. The system didn’t accept it and the difference between cities and territories was explained. Participant 1 was then able to successfully add a territory.</li>
+							<li>Clicked start before clicking add player to add the last player. The system gave a pop up explaining this and Participant 1 was able to successfully complete Task 1.</li>
+						</ol>
+					<li>Task 2:</li>
+						<ol>
+							<li>Didn’t click a territory off the dropdown to add it. Participant 1 was able to figure it out and complete Task 2.</li>
+						</ul>
+			<h5>Participant 2</h5>
+				<ul>
+					<li>Task 1:</li>
+						<ol>
+							<li>Added a player without clicking on a territory from the dropdown. The system did not accept it.</li>
+							<li>Repeated first error. The problem turned out to be that Russia was not in the system’s list of territories.</li>
+							<li>Clicked start before clicking add player to add the last player. The system gave a pop up explaining this and Participant 2 was able to successfully complete Task 1.</li>
+						</ol>
+					<li>Task 2:</li>
+						<ol>
+							<li>Participant 2 was technically able to complete the third task but completely missed the tabs in the navigation bar, which task 3 aimed to test. Rather than click the Faction tab to access the information, Participant 2 cycled through the turns until they got to the faction they were asked to look for. Technically the task was complete but as the ideal path wasn’t clear through the interface it is counted as a mistake.</li>
+						</ol>
+				</ul>
+			<h5>Participant 3</h5>
+				<ul>
+					<li>Task 1:</li>
+						<ol>
+							<li>Clicked start before clicking add player to add the last player. The system gave a pop up explaining this and Participant 3 was able to successfully complete Task 1.</li>
+						</ol>
+				</ul>
+			<h5>Participant 4</h5>
+				<ul>
+					<li>Task 1:</li>
+						<ol>
+							<li>Skipped adding a faction when trying to add a player.</li>
+						</ol>
+				</ul>
+
+		<h4>Interview Responses</h4>
+			<h5>Question 1</h5>
+				<ul>
+					<li>
+						Participant 1: Participant 1 said that “as a new player it didn’t guide [him] very well.” He had played Risk before but never Risk Legacy, and while confused by some of the rules, felt that with more domain knowledge the system could be very useful.
+					</li>
+					<li>
+						Participant 2: Found that personally he missed the visuals that the game itself has and found that the visual board game was easier to use to keep track of things.
+					</li>
+					<li>
+						Participant 3: Said that the system wasn’t particularly useful but that there was potential in some areas. He commented on how the lack of any backend made things like the troop calculator, the most potentially useful, useless. He also mentioned that the early game, the part being tested, was the easiest and that the system may be more useful in late game situations where there is more to keep track of.
+					</li>
+					<li>
+						Participant 4: Gave a soft yes. He was not as familiar with Risk and “only played a turn.” The system could be useful but felt like it was hard to gauge after a short test.
+					</li>
+				</ul>
+				
+			<h5>Question 2</h5>
+				<ul>
+					<li>
+						Participant 1: The drop down menus for adding territories need a background. He also suggested that if there’s only one result, rather than having a drop down menu with that one result the system should just autofill.
+					</li>
+					<li>
+						Participant 2: The add player system needs to be changed. He suggested having players enter how many player are in a game, and then having the system display that many spaces to enter players.
+					</li>
+					<li>
+						Participant 3: Made the same suggestions are Participant 1 that the adding territories needs to be improved. He suggested that a background be added to the dropdown.
+					</li>
+
+					<li>
+						Participant 4: Didn’t have any specific feedback.
+					</li>
+				</ul>
+
+			<h5>Question 3</h5>
+				<ul>
+					<li>
+						Participant 1: Suggested altering the interface based on player experience. For example, add different tracks so that some new will have all the information that they’ll need to understand the game and the interface, but someone who’s played before won’t be slowed down by extra text.
+					</li>
+					<li>
+						Participant 2: Suggested moving the troop count and the word troops closer together, or closer to the same size, or otherwise more obviously grouped.
+					</li>
+					<li>
+						Participant 3: Similar the Participant 2’s answer the Question 2, suggested changing the add player screen to eliminate the problems with having to click Add Player to enter them, and then having an extra empty row. He made suggestions about ways to sue the system to keep track of more information relating to where a player could move. Also suggested keeping track of how many troops are in each territory and calculated probability when attacking or defending.
+					</li>
+					<li>
+						Participant 4: Felt that having to add a faction to a player before starting the game was unclear but had no specific suggestions.
+					</li>
+				</ul>
+
+	<h3>Summary Of Data</h3>
+
+		<p>
+			The average error data showed that participants struggled the most with the first task, starting a game with five players. Based on observation and interview question responses these problems are caused by confusion around how to enter territories and add players. Multiple participants had trouble adding a territory to a player. This was mainly caused by participants typing a full territory name into the field rather than relying on the dropdown menu. This was most likely because they had to map in front of them to reference territory names, or were familiar enough with Risk to know.
+		</p>
+		<p>
+			The second common problem was adding the final player. Multiple participants noted that it was strange to have to click add player to get the new bar to appear and then click it again to add the new player.
+		</p>
+
+		<p>
+			The only problem from Task 2 is really a repeat of the problem that participants had adding territories when adding players. The same dropdown feature is used in both places.
+		</p>
+		<p>
+			The only problem from Task 3 is an outlier and more of a problem with a participant doing something that wouldn’t happen in an actual game. He wouldn’t skip over multiple turns to find out what faction a certain player was.
+		</p>
+
+		<p>
+			The interview answers were varied. Overall the responses to the first question are divided between the two participants who are familiar with Risk Legacy and the two who aren’t. The newer players felt that the system was helpful and saw more potential for it, where the two who had played Risk Legacy a lot before were more critical. 
+		</p>
+		<p>
+			Questions 2 and 3 were about problems and possible changes to the system. The most common responses were add a background to the dropdown, and change the add player interface.
+		</p>
+
+
+<h2>Recommendations</h2>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<td>Change</td>
+				<td>Justification</td>
+				<td>Severity</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Add an opaque background to the territory dropdown</td>
+				<td>Several participants commented on how the dropdown can be hard to read</td>
+				<td>Minor</td>
+			</tr>
+			<tr>
+				<td>Update the list of territories</td>
+				<td>A participant was unable to enter certain territories because they did not appear in the system’s list</td>
+				<td>High</td>
+			</tr>
+			<tr>
+				<td>Have users enter the number of players and then be given a form to enter player information</td>
+				<td>The majority of participants had trouble adding players to a game. This eliminates the problem of having to repeated click Add Player and then having a empty row</td>
+				<td>Moderate</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+<h2>Conclusions</h2>
+	<p>
+		Most participants found some use in this system and all were able to complete all of their tasks, even if they made mistakes in the process. Ease of use and general usefulness is very important for the system. If it’s too difficult it will pull people out of the game and be more work than it’s worth which is something the project has emphasized from the beginning. The study identified several recommendations that will help eliminate the problems that remain but further testing would be needed to ensure that they are successful. 
+	</p>
+
+<h2>Attachments</h2>
+	<h3>User Brief</h3>
+		<p>
+			Hello and thank you for taking the time to help us test our user interface. You are going to be using a prototype of our a new dynamic rulebook system for the board game Risk Legacy. Don’t worry if you have never played the game Risk Legacy or even Risk before, our system should be designed for even new users to be able to navigate. That being said we are testing our interface not you, so don’t worry if you get confused or are not sure what to do next, that will help us better understand where our design needs improvement.
+		</p>
+		<p>
+			If something seems unclear to you please ask us questions and don’t worry, like I said we are testing our prototype not you so there are no wrong answers.
+		</p>
+		<h5>After Task 1:</h5>
+		<p>
+			For the sake of testing our interface we are treating a lot of the game as a black box. I will explain what we’re pretending happens so that you can complete your task with the interface.
+		</p>
+
