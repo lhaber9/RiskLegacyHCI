@@ -1,3 +1,63 @@
 <h1>P9 - Final Report</h1>
 
-<h2>Coming Soon :)</h2>
+<h2>Problem</h2>
+	<p>
+	
+	</p>
+	<p>
+	
+	</p>
+
+<h2>Design</h2>
+	<p>
+	
+	</p>
+	<p>
+	
+	</p>
+
+<h2>Implementation</h2>
+	<p>
+		For our implementation we chose to create an Angular Javascript web application. Our prototype is contained in our course website, which is a small Ruby Sinatra server hosted on the cloud application platform Heroku. Angular offered us a simple yet powerful framework in which to build, which at least some of our group was familiar with. In addition, views for Angular Javascript applications are generally made in HTML and CSS, another area of familiarity and a chance to use Bootstrap to create responsive screens. We were also able to easily host our prototype in the same place as our project website, making it easy to distribute and test internally. Development work was done in a simple text editor. The server was started locally at the command line for local testing before pushing the code to the remote Heroku server.
+	</p>
+	<p>
+		Our prototype is designed as a pretty basic angular application. One main web page is loaded and the javascript dynamically changes the page’s content without reloading that web page. Each of our views is modeled as a separate .html file with its own dedicated angular controller. This gives clear encapsulation and makes it a lot easier to diagnose problems and make changes after the initial structure of our application is built. This has been useful when iterating on our design.
+	</p>
+	<p>
+		The data part of our application really centers around the storage and tracking of players in the game. One way we were able to save time during implementation was by forgoing a full database in favor of storing this player data in a global scope variable in memory. While there are clear advantages to using a persistent memory store, this was an easy way to start storing simple data without all the work it would have taken to create a full backend. The different controllers in our prototype access this global array of players during player creation in setup, to save conquered territories as users play through turns, and to retrieve those territories when players navigate to a previous turn using the “back” button.
+	</p>
+	<p>
+		One area where implementation may have affected usability is in page layout. While our team did have familiarity with the UI tools we chose to use, none of us was really an expert on them. High level design was easy, but the most time consuming part of our implementation was trying to mess with small UI and layout details. A few layout compromises had to be made due to this.
+	</p>
+
+
+<h2>Evaluation</h2>
+	<p>
+		This project was characterized by a fine line that we as designers had to walk. We wanted our system to be useful to player of Risk Legacy, but at the same time we did not want tot model the game digitally or otherwise eliminate the need for an actual game. This essentially means that we need to find the worst pinpoint with the least painful solution. It came across that this was essentially troop calculation, by far one of the most arduous parts of any risk game made simple by tracking territory acquisition.
+	</p>
+	<p>
+		The biggest thing I can say about the evaluation is that lacking backend made our prototype difficult to test. A few of us wanted to design a full back end and then let users play full games of Risk Legacy while using it so we could get feedback. Our unique problem set is what caused this issue to arise and we are better designers for it. Now we just know the best ways to go about designing systems that have these type of limits.
+	</p>
+	<p>
+		There were few revisions that we had to make once we got to our digital prototype, although we had to make many adjustments to our paper prototype.
+	</p>
+	<p>
+		One of the things that became very apparent with user testing was that tasks that we imagined would were stupidly easy where actually quite difficult for our users. So during our paper prototyping and pilot test we had to perform a number of revisions that we never thought were going to be revisions.
+	</p>
+	<p>
+		In conclusion, we think our project has potential to be useful for some players of Risk Legacy. But have a successful version of this software would require more revision and a decent amount of user testing that involved back end implementation. Testing our design with back-end implementation is critical to determining the actual usefulness of our system as opposed to simply our user interface which was outside the scope of this project.
+	</p>
+	<p>
+		This has been the crux of our testing results: that our system as it is works well, but it is difficult to determine more useful information without the implementation of our back-end, which obviously will have a massive effect on the process of testing and our user’s experience. Our ideal testing setting once we would have a working backend would be users playing multiple games of risk legacy over a long period of time and the users rating their satisfaction with the system.
+	</p>
+
+<h2>Reflection</h2>
+	<p>
+		During the course of this project we learned a number of things and would have done several parts differently. One thing in particular we found was the impact that subject’s domain knowledge had on their performance. Since we developed our project for experienced Risk players we left in several things that only they would understand. When we couldn’t find experienced Risk players and had to test with novices we were not surprised when they couldn’t figure things out and resisted changing them. Then when we DID get experienced Risk players, and they couldn’t figure things out we realized we had an issue. Either getting in experienced players earlier or giving novices the domain knowledge necessary (likely by having them read the rule book or listening to instructions) would have been a huge boon and something I think we will all do on future projects that require domain knowledge.
+	</p>
+	<p>
+		Another thing I wished we had done better was in faking our backend to allow a more free testing experience. We understandably wanted to build as little of a backend as possible for this project, but several of our features and a large part of its purpose was the backend. Arguably the most useful feature, the troop placement count, we had hooked up to a random number generator and told subjects to either assume that the number was correct or pretend it had given the correct number. This limited the trust users had in the system and limited their overall use of it, preferring to pretend to use it like we pretended our system worked. This forced us to use incredibly constrained user tasks for testing, when I would rather have given a group of testers our system and a game of Risk to see how things went. In the future for these kinds of tasks I think a kind of mechanical Turk solution is most optimal, having a person in the background keeping track of everything and manually editing the display in some way. It makes the system slower than optimal, but it is easier for users to pretend a system is faster than to assume it works as intended.
+	</p>
+	<p>
+		Placing the system in a more natural setting also allows us to collect more data. While it wasn’t necessarily a problem, our tests and studies involved very little hard data and a lot of interviews and opinions from subjects. While I think these semi structured interviews were fantastic and I will be definitely be using them again, more hard data on how frequently our system was used, if users actually used it, and how distracting it was would have been incredibly helpful to have.
+	</p>
