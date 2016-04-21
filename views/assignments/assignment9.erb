@@ -2,19 +2,83 @@
 
 <h2>Problem</h2>
 	<p>
-	
+		This project aimed to simplify the game Risk Legacy. There a lot of rules in the game Risk and Risk Legacy further complicates them as they change each time the game is played. New and old players have trouble remembering every aspect of the game and often forget something.
 	</p>
 	<p>
-	
+		The systems users are Risk Legacy players, both old and new. Other demographic information is relatively inconsequential.
+	</p>
+	<p>
+		For this project the game was broken down into three sections: starting a game, playing a turn, and ending a game. Starting a game involves entering each player and their associated faction and starting territory. Playing a turn involves playing any relevant scar cards, gather troops and placing them on the board, expanding or attacking surrounding territories, and then playing any relevant cards. At the end of a game players complete certain actions depending on whether they won, were eliminated, or held on.
 	</p>
 
 <h2>Design</h2>
 	<p>
-	
+		The first screen of the system is the Add Players screen. On this screen users enter a name, faction, and starting territory for each player. 
+	</p>
+	<div class="row row-centered">
+		<div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2">
+			<img src="/images/assignment9/image1.png" width="100%">
+		</div>
+	</div>
+	<p>
+		The system doesn’t allow for more than 5 players, a rule from Risk Legacy. To add a new player they must click Add Player to get a new blank row, and then click Add Player again to enter that player which gives them a new blank row. This confused users in early prototype testing so the system was changed to give an error if a user tried to start a game without saving all players.
+	</p>
+	<div class="row row-centered">
+		<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+			<img src="/images/assignment9/image3.png" width="100%">
+		</div>
+	</div>
+	<p>
+		The window explains the error and gives the option to go back and fix it or keep going, following Nielson’s clearly marked exits and helpful error messages. Following the final round of user testing recommendations were made to change this in any future iterations so that users could enter a number of players and then enter information, rather than have to keep clicking Add Player, and then dealing with an extra empty row.
 	</p>
 	<p>
-	
+		To try to reduce user memory load and also to prevent spelling errors, the add Starting Territory field will show a dropdown of all territories containing the text the user has entered. The user then has to click on the territory for the system to accept it.
 	</p>
+	<div class="row row-centered">
+		<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+			<img src="/images/assignment9/image7.png" width="100%">
+		</div>
+	</div>
+	<p>
+		After final user testing recommendations were made to add a background to the dropdown to improve readability. The most recent user tests also showed that having the Risk Legacy board does a lot to reduce user memory load as is.
+	</p>
+	<p>
+		The system includes a page that lists each faction and its associated player, each pack or pocket that would be used to include rule changes in the system when the backend is implemented, and a search page to make it faster to access information from the rulebook. Less focus was placed on these pages as without any backend they don’t do anything for the system or the user.
+	</p>
+	<p>
+		The system represented a turn with the quickview screen.
+	</p>
+	<div class="row row-centered">
+		<div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2">
+			<img src="/images/assignment9/image16.png" width="100%">
+		</div>
+	</div>
+	<p>
+		The interface itself is very simple and grayscale. Color is used to label each player by faction and ensure that no player accidentally plays the wrong turn. The territory field is the same method that is used on the start screen.
+	</p>
+	<p>
+		The screen is laid out so that the order that an English speaking user scans the page follows the order of steps in their turn. Left to right and top to bottom it: reminds users to check for commonly overlooked cards that can be played at the start of their turn, calculates the number of troops they receive based on territory data and faction bonuses, and has them add any territories acquired during their turn for future calculations. Then they click End Turn and the next player’s turn begins. Following feedback during the presentation a back button was added so that the system follows the clearly marked exit heuristic. To stay consistent with usual web layouts it is placed in the upper left of the page.
+	</p>
+	<p>
+		Originally it was planned to try and eliminate as much text as possible and use icons from the game to represent scar card reminders. However during the most recent user feedback one user who was new to Risk Legacy pointed out that text can be helpful to new people or anyone unfamiliar with the images. Eliminating the text would make the design too simple for new users. Similarly End Turn used to be an error but several test users were confused about what the arrow did, so it was replaced with End Turn.
+	</p>
+	<p>
+		If the system was fully implemented the system would be able to tell when someone won based on what territories had been conquered. However without the backend, a button was added to end the game. Originally it had been placed on the bottom left, next to the add territory field. During the presentation it was pointed out that this was terrible error prevention. As a result the button was moved to the top right of the navigation bar.
+	</p>
+	<div class="row row-centered">
+		<div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2">
+			<img src="/images/assignment9/image14.png" width="100%">
+		</div>
+	</div>
+	<p>
+		A popup window also appears so that, following the clearly marked exits heuristic, the user can confirm they want to end the game or go back to the turn screen.
+	</p>
+	<div class="row row-centered">
+		<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+			<img src="/images/assignment9/image12.png" width="100%">
+		</div>
+	</div>
+	
 
 <h2>Implementation</h2>
 	<p>
@@ -27,22 +91,22 @@
 		The data part of our application really centers around the storage and tracking of players in the game. One way we were able to save time during implementation was by forgoing a full database in favor of storing this player data in a global scope variable in memory. While there are clear advantages to using a persistent memory store, this was an easy way to start storing simple data without all the work it would have taken to create a full backend. The different controllers in our prototype access this global array of players during player creation in setup, to save conquered territories as users play through turns, and to retrieve those territories when players navigate to a previous turn using the “back” button.
 	</p>
 	<p>
-		One area where implementation may have affected usability is in page layout. While our team did have familiarity with the UI tools we chose to use, none of us was really an expert on them. High level design was easy, but the most time consuming part of our implementation was trying to mess with small UI and layout details. A few layout compromises had to be made due to this.
+		One area where implementation may have affected usability is in page layout. While our team did have familiarity with the UI tools we chose to use, none of us was really an expert on them. High level design was easy, but the most time consuming part of our implementation was trying to mess with small UI and layout details. A few layout compromises had to be made due to this. The main compromise we made was the placement of the back button and the end game button on the main turn screen. We had wanted these buttons to be out at the edges of the screen, but this proved difficult in the UI framework we were working with. We settled for their current placement, near the buttons at the center but with a divider. While this layout works, it would be a more clear distinction if these buttons were further out to the sides.
 	</p>
 
 
 <h2>Evaluation</h2>
 	<p>
-		This project was characterized by a fine line that we as designers had to walk. We wanted our system to be useful to player of Risk Legacy, but at the same time we did not want tot model the game digitally or otherwise eliminate the need for an actual game. This essentially means that we need to find the worst pinpoint with the least painful solution. It came across that this was essentially troop calculation, by far one of the most arduous parts of any risk game made simple by tracking territory acquisition.
+		This project was characterized by a fine line that we as designers had to walk. We wanted our system to be useful to player of Risk Legacy, but at the same time we did not want to model the game digitally or otherwise eliminate the need for an actual game. This essentially means that we need to find the worst pinpoint with the least painful solution. It came across that this was essentially troop calculation, by far one of the most arduous parts of any risk game made simple by tracking territory acquisition.
 	</p>
 	<p>
-		The biggest thing I can say about the evaluation is that lacking backend made our prototype difficult to test. A few of us wanted to design a full back end and then let users play full games of Risk Legacy while using it so we could get feedback. Our unique problem set is what caused this issue to arise and we are better designers for it. Now we just know the best ways to go about designing systems that have these type of limits.
+		The biggest thing I can say about the evaluation is that lacking backend made our prototype difficult to test. A few of us wanted to design a full back end and then let users play full games of Risk Legacy while using it so we could get feedback. Our unique problem set is what caused this issue to arise and we are better designers for it. Now we just know the best ways to go about designing systems that have these type of limits. 
 	</p>
 	<p>
 		There were few revisions that we had to make once we got to our digital prototype, although we had to make many adjustments to our paper prototype.
 	</p>
 	<p>
-		One of the things that became very apparent with user testing was that tasks that we imagined would were stupidly easy where actually quite difficult for our users. So during our paper prototyping and pilot test we had to perform a number of revisions that we never thought were going to be revisions.
+		One of the things that became very apparent with user testing was that tasks that we imagined would were stupidly easy where actually quite difficult for our users. So during our paper prototyping and pilot test we had to perform a number of revisions that we never thought were going to be revisions. Some of these revisions including the placement of specific buttons on the quick view screen, and the addition of a magnifying glass icon on the search section of our prototype. Without these changes our users were often stuck as to what we wanted them to do or what specific parts of our program were meant to do.
 	</p>
 	<p>
 		In conclusion, we think our project has potential to be useful for some players of Risk Legacy. But have a successful version of this software would require more revision and a decent amount of user testing that involved back end implementation. Testing our design with back-end implementation is critical to determining the actual usefulness of our system as opposed to simply our user interface which was outside the scope of this project.
@@ -53,7 +117,7 @@
 
 <h2>Reflection</h2>
 	<p>
-		During the course of this project we learned a number of things and would have done several parts differently. One thing in particular we found was the impact that subject’s domain knowledge had on their performance. Since we developed our project for experienced Risk players we left in several things that only they would understand. When we couldn’t find experienced Risk players and had to test with novices we were not surprised when they couldn’t figure things out and resisted changing them. Then when we DID get experienced Risk players, and they couldn’t figure things out we realized we had an issue. Either getting in experienced players earlier or giving novices the domain knowledge necessary (likely by having them read the rule book or listening to instructions) would have been a huge boon and something I think we will all do on future projects that require domain knowledge.
+		During the course of this project we learned a number of things and would have done several parts differently. One thing in particular we found was the impact that subject’s domain knowledge had on their performance. Since we developed our project for experienced Risk players we left in several things that only they would understand. When we couldn’t find experienced Risk players and had to test with novices we were not surprised when they couldn’t figure things out and resisted changing them. Then when we DID get experienced Risk players, and they couldn’t figure things out we realized we had an issue. Either getting in experienced players earlier or giving novices the domain knowledge necessary (likely by having them read the rulebook or listening to instructions) would have been a huge boon and something I think we will all do on future projects that require domain knowledge.
 	</p>
 	<p>
 		Another thing I wished we had done better was in faking our backend to allow a more free testing experience. We understandably wanted to build as little of a backend as possible for this project, but several of our features and a large part of its purpose was the backend. Arguably the most useful feature, the troop placement count, we had hooked up to a random number generator and told subjects to either assume that the number was correct or pretend it had given the correct number. This limited the trust users had in the system and limited their overall use of it, preferring to pretend to use it like we pretended our system worked. This forced us to use incredibly constrained user tasks for testing, when I would rather have given a group of testers our system and a game of Risk to see how things went. In the future for these kinds of tasks I think a kind of mechanical Turk solution is most optimal, having a person in the background keeping track of everything and manually editing the display in some way. It makes the system slower than optimal, but it is easier for users to pretend a system is faster than to assume it works as intended.
