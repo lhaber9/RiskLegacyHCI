@@ -1,0 +1,29 @@
+<div class="row top-buffer colorPrimary text-center">
+	<div class="text textLarge">Map of support</div>
+	<div class="text textSmall">See map of current polling results. Click play button to view change over time</div>
+</div>
+
+<div class="row top-buffer bottom-buffer colorPrimary" style="height:100px;">
+	<div class="col-xs-5 col-xs-offset-1 noPad">
+		<button class="btn btn-block button" style="height:100%" ng-click="$location.path('/resultsChart')">Chart</button>
+	</div>
+	<div class="col-xs-5 noPad">
+		<button class="btn btn-block button colorAccent textSecondary" style="height:100%">Map</button>
+	</div>
+</div>
+
+<div class="row top-buffer colorPrimary text-center">
+	<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+
+		<div id="mapDiv"></div>
+
+	</div>
+</div>
+
+<div class="row top-buffer full-height colorPrimary text-center">
+	<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+
+		<span class="glyphicon glyphicon-play" style="font-size:38pt;"></span>
+
+	</div>
+</div>

@@ -1,0 +1,42 @@
+<html lang="en" ng-app="InteractionDesign">
+<head>
+
+    <link href="/nav-justified.css" rel="stylesheet" type="text/css"></link>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/experiments/lib/canvasjs.min.js"></script>
+
+    <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/usaLow.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/chalk.js"></script>
+
+    <link rel="stylesheet" href="/experiments/css/main.css">
+    <link rel="stylesheet" href="/main.css">
+
+    <script src="/experiments/app.js"></script>
+    <script src="/experiments/config.js"></script>
+
+    <script src="/experiments/js/homeController.js"></script>
+    <script src="/experiments/js/firstVoteController.js"></script>
+    <script src="/experiments/js/resultsChartController.js"></script>
+    <script src="/experiments/js/resultsMapController.js"></script>
+    <script src="/experiments/js/headerController.js"></script>
+</head>
+
+<body>
+
+  <div ng-include="'/experiments/html/header.html'"></div>
+
+  <div class="container-fluid">
+    <div ng-view class="main"></div>
+  </div>
+
+</body>
+</html>

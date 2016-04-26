@@ -1,0 +1,8 @@
+<nav class="colorPrimary" ng-controller="HeaderController">
+    <div id="headerDiv" class="container-fluid" ng-class="{headerDivLarge: $location.url() == '/home', headerDivSmall: $location.url() != '/home'}">
+            <div id="headerTextBox">
+                <div id="headerLabel">SimPoll</div>
+                <div ng-show="$location.url() == '/home'" id="headerSubLabel">Vote once a day and access real-time dynamic polling data</div>
+            </div>
+    </div>
+</nav>

@@ -21,6 +21,11 @@ get "/" do
   erb :root
 end
 
+get "/e/:pageName" do 
+	pageName = params[:pageName].to_s
+	erb ("experiments/" + pageName).to_sym, :layout => false
+end
+
 get "/p/:pageName" do 
 	pageName = params[:pageName].to_s
 	erb ("prototype/" + pageName).to_sym, :layout => false
